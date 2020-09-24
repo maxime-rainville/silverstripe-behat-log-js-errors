@@ -1,0 +1,16 @@
+---
+Name: silverstripe-behat-log-js-error
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'js-log':
+      Controller: '%$MaximeRainville\SilverstripeBehatLogJsError\Controller'
+      Permissions:
+        CMS_ACCESS: CMS_ACCESS
+
+SilverStripe\Admin\LeftAndMain:
+  extra_requirements_javascript:
+    - 'maxime-rainville/silverstripe-behat-log-js-errors:client/dist/bundle.js'
